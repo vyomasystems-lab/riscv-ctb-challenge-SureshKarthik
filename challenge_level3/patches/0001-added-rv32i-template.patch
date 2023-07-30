@@ -1,0 +1,58 @@
+From bca192e1e211b01d6058e6dd3f92cbfec608ac0e Mon Sep 17 00:00:00 2001
+From: Suresh Kumar Karthikeyan <sureshkarthikfrnd@gmail.com>
+Date: Sun, 30 Jul 2023 19:24:22 +0400
+Subject: [PATCH] added rv32i template
+
+---
+ base-sim/templates/rv32i.inc | 39 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
+ create mode 100644 base-sim/templates/rv32i.inc
+
+diff --git a/base-sim/templates/rv32i.inc b/base-sim/templates/rv32i.inc
+new file mode 100644
+index 0000000..09b1846
+--- /dev/null
++++ b/base-sim/templates/rv32i.inc
+@@ -0,0 +1,39 @@
++ISA=RV32I
++MUL=fpga
++SYNTH=SIM
++VERBOSITY=0
++USERTRAPS=enable
++USER=enable
++COREFABRIC=AXI4
++MULSTAGES=4
++DIVSTAGES=32
++FPGA=xc7a100tcsg324-1
++SYNTHTOP=mkriscv
++PADDR=32
++RESETPC=4096
++ARITHTRAP=disable
++
++CAUSESIZE=6
++DEBUG=disable
++OPENOCD=disable
++DTVEC_BASE=0
++
++# Verilator options
++COVERAGE=none
++TRACE=disable
++THREADS=1
++VERILATESIM=fast
++
++# DebugOptions
++RTLDUMP=enable
++ASSERTIONS=enable
++
++# Trigger Setup
++TRIGGERS=2
++
++# performance counters
++COUNTERS=1
++
++# pmp
++PMP=enable
++PMPSIZE=4
+-- 
+2.20.1
+
