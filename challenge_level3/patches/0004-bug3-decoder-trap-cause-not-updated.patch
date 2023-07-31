@@ -1,0 +1,33 @@
+From ff910c51f599c2fcf97b67b22339355e8f883e11 Mon Sep 17 00:00:00 2001
+From: Suresh Kumar Karthikeyan <sureshkarthikfrnd@gmail.com>
+Date: Mon, 31 Jul 2023 07:54:03 +0400
+Subject: [PATCH 4/4] bug3 - decoder trap cause not updated
+
+---
+ src/core/decode.bsv | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/src/core/decode.bsv b/src/core/decode.bsv
+index 099d167..c522531 100644
+--- a/src/core/decode.bsv
++++ b/src/core/decode.bsv
+@@ -399,7 +399,7 @@ package decode;
+       rs2type = Immediate;
+ 
+ // ------------------------------------------------------------------------------------------- //
+-  Bit#(`causesize) trapcause = `Illegal_inst;
++  Bit#(`causesize) trapcause = 0;
+   Bool validload = `ifdef RV32 funct3 != 3 && funct3 != 7 `else funct3 != 7 `endif ;
+ `ifdef RV32
+   Bool validImm = (funct3 == 1) ? (funct7 == 0) : (funct3 == 5) ? 
+@@ -484,7 +484,6 @@ package decode;
+   endcase
+   if(inst[1 : 0] != 'b11 && inst_type != TRAP)begin
+     inst_type = TRAP;
+-    trapcause = `Illegal_inst;
+   end
+ 
+   // checks : TVM = 1 TW = 1 TSR = 0
+-- 
+2.20.1
+

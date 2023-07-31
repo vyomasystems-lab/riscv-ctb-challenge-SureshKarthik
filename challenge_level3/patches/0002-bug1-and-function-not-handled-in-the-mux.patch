@@ -1,7 +1,7 @@
 From d774ce7a2f08bd00f40570a1bb42f5f4bc4ab64d Mon Sep 17 00:00:00 2001
 From: Suresh Kumar Karthikeyan <sureshkarthikfrnd@gmail.com>
 Date: Mon, 31 Jul 2023 05:05:52 +0400
-Subject: [PATCH 2/3] bug1 - and function not handled in the mux
+Subject: [PATCH 2/4] bug1 - and function not handled in the mux
 
 ---
  src/core/alu.bsv | 1 -

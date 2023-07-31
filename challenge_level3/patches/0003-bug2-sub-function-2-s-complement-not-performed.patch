@@ -1,7 +1,7 @@
 From 7f4befd3053cedce6f24984b1032cf54257ccb0c Mon Sep 17 00:00:00 2001
 From: Suresh Kumar Karthikeyan <sureshkarthikfrnd@gmail.com>
 Date: Mon, 31 Jul 2023 05:41:20 +0400
-Subject: [PATCH 3/3] bug2 - sub function 2's complement not performed
+Subject: [PATCH 3/4] bug2 - sub function 2's complement not performed
 
 ---
  src/core/alu.bsv | 2 +-
