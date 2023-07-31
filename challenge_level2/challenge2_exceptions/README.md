@@ -71,6 +71,4 @@ The custom trap handler is enabled in the AAPG configuration file. So the MTVEC 
 
 The MEPC register is incremented by 4 for 32-bit instruction
 
-![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/b2204e1e-e9a0-496b-aa39-1113557d4740)
-
 ![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/ea07e333-8631-4cdd-9735-edb3b6275140)
