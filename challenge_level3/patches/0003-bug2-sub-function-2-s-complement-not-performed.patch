@@ -1,0 +1,25 @@
+From 7f4befd3053cedce6f24984b1032cf54257ccb0c Mon Sep 17 00:00:00 2001
+From: Suresh Kumar Karthikeyan <sureshkarthikfrnd@gmail.com>
+Date: Mon, 31 Jul 2023 05:41:20 +0400
+Subject: [PATCH 3/3] bug2 - sub function 2's complement not performed
+
+---
+ src/core/alu.bsv | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/core/alu.bsv b/src/core/alu.bsv
+index cb5fe69..59c3cc8 100644
+--- a/src/core/alu.bsv
++++ b/src/core/alu.bsv
+@@ -132,7 +132,7 @@ package alu;
+     /* ---------------------------- Perform all the arithmetic -------------------------------- */
+     // ADD * ADDI * SUB* 
+     Bit#(TAdd#(XLEN, 1)) inv = duplicate(pack(fn[1]));
+-    let inv_op2 = {op2,1'b0}^inv;
++    let inv_op2 = {op2,1'b0};
+     let op1_xor_op2 = op1^op2;
+     Bit#(XLEN) adder_output = truncateLSB({op1,1'b1} + inv_op2);
+     Bit#(1) adder_z_flag = ~|op1_xor_op2;
+-- 
+2.20.1
+

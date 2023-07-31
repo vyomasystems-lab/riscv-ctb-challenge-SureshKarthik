@@ -15,6 +15,7 @@ cd e-class/
 git checkout 1.10.2
 git am ../patches/0001-added-rv32i-template.patch
 git am ../patches/0002-bug1-and-function-not-handled-in-the-mux.patch
+git am ../patches/0003-bug2-sub-function-2-s-complement-not-performed.patch
 cd base-sim
 ./manager.sh update_deps
 make CONFIG=templates/rv32i.inc generate_verilog
