@@ -1,0 +1,24 @@
+From d774ce7a2f08bd00f40570a1bb42f5f4bc4ab64d Mon Sep 17 00:00:00 2001
+From: Suresh Kumar Karthikeyan <sureshkarthikfrnd@gmail.com>
+Date: Mon, 31 Jul 2023 05:05:52 +0400
+Subject: [PATCH 1/2] bug1 - and function not handled in the mux
+
+---
+ src/core/alu.bsv | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/src/core/alu.bsv b/src/core/alu.bsv
+index 2834da2..cb5fe69 100644
+--- a/src/core/alu.bsv
++++ b/src/core/alu.bsv
+@@ -176,7 +176,6 @@ package alu;
+       `FNSR, `FNSRA: pack(shift_r);
+       `FNSL: pack(shift_l);
+       `FNOR: (op1 | op2);
+-      `FNAND: (op1 & op2);
+       default: op1_xor_op2;
+     endcase;
+ 
+-- 
+2.20.1
+
