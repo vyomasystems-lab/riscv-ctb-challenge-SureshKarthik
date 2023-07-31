@@ -20,3 +20,4 @@ Above fixes will result value `0` irrespective of the other operand as in AND op
 1. `s4` register used as an operand
 2. `0xF0` value used as immediate operand that masks the 2nd nibble in the `t1` register
 ![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/f8b4def1-41f4-4332-a719-4285194aeb70)
+![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/024e2dd9-68b9-48f2-937f-fc2f90af51ab)
