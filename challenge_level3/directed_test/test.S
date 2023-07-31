@@ -47,6 +47,10 @@ test_3:
 test_3_fail:
   addi t6, t6, 1
 
+  #-------------------------------------------------------------
+  # Arithmetic tests
+  #-------------------------------------------------------------
+
 test_4:
   li TESTNUM, 4
   li ra, 3
@@ -54,8 +58,23 @@ test_4:
   sub t5, ra, sp
   li t4, 2
   bne t5, t4, test_4_fail
-  j test_end
+  j test_5
 test_4_fail:
+  addi t6, t6, 1
+
+  #-------------------------------------------------------------
+  # Arithmetic tests
+  #-------------------------------------------------------------
+
+test_5:
+  li TESTNUM, 5
+  li ra, 3
+  li sp, 1
+  slt t5, ra, sp
+  li t4, 0
+  bne t5, t4, test_5_fail
+  j test_end
+test_5_fail:
   addi t6, t6, 1
 
 test_end:
