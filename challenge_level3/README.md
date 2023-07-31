@@ -20,6 +20,7 @@ The test program is directed with few arithmetic, comparison and exception test 
 | 4  | SUB | t5=2  | t5=4  | Fail|
 | 5  | SLT | t5=0  | t5=0  | Pass|
 | 6  | 0 | MCAUSE=2  | MCAUSE=0  | Fail|
+
 The `t2` register is incremented for each failure. It counts to 3 bugs in various parts of the RISC-V design ALU and decoder.
 #### Bugs
 The bugs are carefully chosen to not tamper the normal operation of the Shakti E-class core so that the trace dump difference is meaningful and related to the number of bugs inserted.
