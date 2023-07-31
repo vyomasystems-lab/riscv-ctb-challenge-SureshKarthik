@@ -14,52 +14,56 @@ The illegal instruction is chosen randomly by the AAPG tool.
 
 ![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/509c35f6-09b4-47b3-aab5-ba09572fce64)
 
+The seed is set to 2 to generate the same illegal instructions every run
+![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/60454524-3021-47ae-8447-c64e24eb62ff)
+
+
 The following illegal instructions are defined in test_template.S
 ```
 .macro ecause02_00000
-.word 0x8CFC9B93
+.word 0xD3DA616B
 .endm
       
 .macro ecause02_00001
-.word 0x44B4F43F
+.word 0xA28F57BF
 .endm
       
 .macro ecause02_00002
-.word 0xEB68C7B
+.word 0xB0531D53
 .endm
       
 .macro ecause02_00003
-.word 0x4553ED3F
+.word 0xB0531D53
 .endm
       
 .macro ecause02_00004
-.word 0x4553ED3F
+.word 0x649468B
 .endm
       
 .macro ecause02_00005
-.word 0xEB68C7B
+.word 0x4BF7590F
 .endm
       
 .macro ecause02_00006
-.word 0xA887595F
+.word 0xBB00092F
 .endm
       
 .macro ecause02_00007
-.word 0x5787787F
+.word 0x28B9A853
 .endm
       
 .macro ecause02_00008
-.word 0x7E02631F
+.word 0x572C93F
 .endm
       
 .macro ecause02_00009
-.word 0x5787787F
+.word 0xD03DD87B
 .endm
 ```
 
 The same is observed in the disassembly file
 
-![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/f8494bea-25e3-4bf8-b438-914b3a4ed52b)
+![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/a992f697-4a74-4438-a49c-0f1af8e2e784)
 
 The custom trap handler is enabled in the AAPG configuration file. So the MTVEC register is pointed to the `custom_trap_handler`
 
@@ -67,9 +71,6 @@ The custom trap handler is enabled in the AAPG configuration file. So the MTVEC 
 
 The MEPC register is incremented by 4 for 32-bit instruction
 
-![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/62d89a6e-2fe7-4829-b22d-0048dbb9bd13)
+![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/b2204e1e-e9a0-496b-aa39-1113557d4740)
 
-![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/97bacc4f-cbd2-406e-932f-7faa0c52426b)
-
-#### Known issues
-The AAPG generates random instructions based on the configuration file. So for each execution, the generated assembly program will not be the same. In few execution, approximately 5 out of 6 iterations, are stuck in a loop just like the challenge 1 bugs and never ends. The same issue has been reported by multiple users and this should be an issue in the AAPG tool as the Spike model and configuration files are static and known to work.
+![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/ea07e333-8631-4cdd-9735-edb3b6275140)
