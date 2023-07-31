@@ -14,6 +14,7 @@ git clone https://gitlab.com/shaktiproject/cores/e-class.git
 cd e-class/
 git checkout 1.10.2
 git am ../patches/0001-added-rv32i-template.patch
+git am ../patches/0002-bug1-and-function-not-handled-in-the-mux.patch
 cd base-sim
 ./manager.sh update_deps
 make CONFIG=templates/rv32i.inc generate_verilog
@@ -21,3 +22,4 @@ make CONFIG=templates/rv32i.inc link_verilator
 make generate_boot_files CONFIG=templates/rv32i.inc
 cp bin/boot.* ../../riscv/
 cp bin/out ../../riscv/riscv_buggy
+cd ../../
