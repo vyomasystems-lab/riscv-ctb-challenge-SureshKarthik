@@ -259,5 +259,6 @@ make: *** [Makefile:11: compile] Error 1
 ```
 #### Fix
 In `rv32i.yaml` file at line 66, `rel_rv64m: 10` is replaced to `rel_rv64m: 0` that disabling the RV64M instructions in the generated assembly program.
+
 ![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/629f4d45-d7ee-41bf-9363-e61fe93e5bab)
 ![image](https://github.com/vyomasystems-lab/riscv-ctb-challenge-SureshKarthik/assets/7915301/d01a1160-f25b-4849-b297-2eae81aaaf51)
